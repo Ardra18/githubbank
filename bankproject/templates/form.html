@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new page</title>
+</head>
+<body style="background-color:Beige;">
+<h2 style="text-align:center;color:black;font-family:timesnewroman;">fill the form</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="enter your name"><br>
+    <input type="date" name="dob" placeholder="enter your dob"><br>
+    <input type="number" name="Age" placeholder="enter your age"><br>
+    <input type="number" name="phone_number" placeholder="enter your phone number"><br>
+    <input type="radio" name="male" value="male">Male<br>
+    <input type="radio" name="Female" value="female">Female<br>
+    <input type="email" name="email" placeholder="enter your email"><br>
+    <input type="text" name="address" placeholder="enter your address"><br>
+    <label for="District">choose a District:</label>
+    <select name="District" id="District">
+        <option>Trivandrum</option>
+        <option>Kollam</option>
+        <option>Alapuzha</option>
+        <option>Ernakulam</option>
+        <option>Kannur</option>
+
+    </select><br>
+    <label for="Branch">choose a Branch:</label>
+    <select name="Branch" id="Branch">
+        <option>Palayam</option>
+        <option>Kottiyam</option>
+        <option>cherthala</option>
+        <option>edapilly</option>
+        <option>thalasserry</option>
+
+    </select><br>
+    <label for="Account Type">choose Account Type:</label>
+    <select name="Account Type" id="Account Type">
+        <option>Current</option>
+        <option>Savings</option>
+        <option>Withdrawl</option>
+    </select><br>
+    <label> Materials Provided:</label><br>
+
+    <input type="checkbox" id="materials provided1" name="materials provided1" value="Debit card">
+    <label for="materials provided1">I have Debit Card</label><br>
+    <input type="checkbox"  id="materials provided2" name="materials provided2" value="Credit Card">
+    <label for="materials provided2" >I have Credit Card</label><br>
+    <input id="materials provided3" name="materials provided2" type="checkbox" value="Cheque Book">
+    <label for="materials provided3">I have Cheque Book</label><br>
+
+
+
+
+
+
+    <button>Submit</button>
+    <button>Logout</button><br>
+    <a href="{% url 'bank:index' %}">Return to Home page</a>
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+
+
+
+
+
+</body>
+</html>
